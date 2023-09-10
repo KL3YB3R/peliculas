@@ -1,0 +1,80 @@
+:root {
+    --white: #fff;
+}
+
+/* ! AUTHENTICATION CONTAINER */
+.main-container {
+    width: 100%;
+    height: 100vh;
+    background: url("/assets/img/movies.jpg") no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ! CARD CONTAINER (LOGIN AND REGISTER) */
+.card-authenticated {
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: -4px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    /* height: 70%; */
+}
+
+.card-authenticated h4 {
+    padding: 0.5rem 0.5rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+.card-authenticated form input {
+    font-size: 13px;
+}
+
+.card-authenticated form label {
+    font-size: 13px;
+    font-weight: 600;
+    padding-left: 0.3rem;
+}
+
+.card-authenticated form a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.card-authenticated form a:hover {
+    color: #d09683;
+}
+
+.card-authenticated form button {
+    border-radius: 4px;
+    width: 5.5rem;
+    transition: all 0.2s;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.card-authenticated form button.login {
+    border: 2px solid #d09683;
+    background-color: transparent;
+    padding: 0.2rem 0;
+}
+
+.card-authenticated form button.login:hover {
+    box-shadow: inset 5.5rem 0 0 0 #d09683;
+    color: var(--white);
+}
+
+.card-authenticated form button.register {
+    background-color: #d09683;
+    padding: 0.2rem 0;
+    border: none;
+    color: #fff;
+    transition: all 0.2s;
+}
+
+.card-authenticated form button.register:hover {
+    opacity: 0.7;
+}

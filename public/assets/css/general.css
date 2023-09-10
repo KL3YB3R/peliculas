@@ -1,0 +1,113 @@
+:root {
+    --first-color: #f70025;
+    --second-color: #f25c00;
+}
+
+.form-group {
+    height: 40px;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    padding: 0.5rem 0.5rem;
+}
+
+header {
+    background-color: #f7efe2;
+    box-shadow: -4px 0px 2px 0px rgba(0, 0, 0, 0.5);
+    height: 60px;
+}
+
+header ul {
+    list-style: none;
+}
+
+header ul > li > a {
+    text-decoration: none;
+    color: #000;
+}
+
+header .item-links {
+}
+
+header .item-links > a {
+    padding: 1rem 1rem;
+    transition: all 0.3s;
+    border-bottom: 2px solid transparent;
+}
+
+header .item-links > a:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid var(--second-color);
+    color: #000;
+}
+
+header .item-links > a.active {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid var(--first-color);
+}
+
+header .item-links > a.active {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid var(--first-color);
+}
+
+header li.li-option {
+    position: relative;
+}
+
+header li.li-option > .link-suboption {
+    width: 30px;
+    height: 30px;
+}
+
+header li.li-option > .link-suboption * {
+    pointer-events: none;
+}
+
+header li.li-option > .link-suboption::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0.3rem;
+    border-radius: 30px;
+    background-color: green;
+}
+
+header li.li-option > .link-suboption > img {
+    width: 30px;
+    height: 30px;
+}
+
+header li.li-option > ul {
+    display: none;
+}
+
+header li.li-option > .link-suboption:hover ~ ul,
+header li.li-option > ul:hover {
+    display: block;
+    width: 6rem;
+    position: absolute;
+    left: -2rem;
+    padding: 0;
+    background-color: #fff;
+    bottom: -3.9rem;
+    text-align: center;
+    /* height: 60px; */
+}
+
+header li.li-option > ul > li {
+    width: 100%;
+    /* padding: 1rem 1rem; */
+}
+
+header li.li-option > ul > li:first-child {
+    border-bottom: 1px solid #eee;
+}
+
+header li.li-option > ul > li > a {
+    width: 100%;
+    padding: 0.2rem 0.5rem;
+}
