@@ -15,33 +15,38 @@ class MovieController extends Controller
     public function index()
     {
         $movies = Movie::all();
-        // $comments = DB::table('comments')
-        //     ->where('id', $id)
-        $film = "";
+        $film = null;
 
         foreach ($movies as $movie) {
-            $idMovie = $movie->id;
             $comments = DB::table('comments')
-                ->where('id_movie', $idMovie)
+                ->select("comments.*", 'users.username', 'users.name', 'users.image', 'users.email')
+                ->where('id_movie', $movie->id)
                 ->join('users', 'users.id', '=', 'comments.id_user')
                 ->orderBy('comments.created_at', 'desc')
                 ->limit(1)
                 ->get();
 
-            $film = [
+            $comment = array(
+                'usernameComment' => null,
+                'comment' => null
+            );
+
+            foreach ($comments as $comm) {
+                $comment = array(
+                    'usernameComment' => $comm->username,
+                    'comment' => $comm->comment
+                );
+            }
+
+            $film[] = array(
                 'movieId' => $movie->id,
                 'movieName' => $movie->name,
                 'movieImage' => $movie->image,
                 'moviePoints' => $movie->movie_points,
-                // 'usernameComment' => $comments->username,
-                // 'comment' => $comments->comment
-            ];
+                'usernameComment' => $comment['usernameComment'],
+                'comment' => $comment['comment'],
+            );
         }
-
-        // $comments = DB::table('movies')
-        //     ->select('*')
-        //     ->join('comments', 'movies.id', '=', 'comments.id_movie')
-
 
         return view('home.index', ['movies' => $film]);
     }

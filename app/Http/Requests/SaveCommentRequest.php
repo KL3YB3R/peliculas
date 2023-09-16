@@ -27,7 +27,7 @@ class SaveCommentRequest extends FormRequest
     {
         return [
             'comment' => 'required',
-            'points' => 'required'
+            'comment_points' => 'required'
         ];
     }
 
@@ -40,7 +40,7 @@ class SaveCommentRequest extends FormRequest
             'id_movie' => $id,
             'username' => $user->username,
             'comment' => $this->get('comment'),
-            'points' => $this->get('points')
+            'comment_points' => $this->get('comment_points')
         ];
     }
 

@@ -22,9 +22,11 @@ use App\Http\Controllers\SaveCommentController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// TODO VISTA HOME
+Route::get('/', [HomeController::class, 'show']);
+
+// TODO MOSTRAR LAS PELICULAS
+Route::get('/', [MovieController::class, 'index']);
 
 // ! SIN LOGUEAR
 // TODO MOSTRAR LA VISTA REGISTER

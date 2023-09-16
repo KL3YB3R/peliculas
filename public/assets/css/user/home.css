@@ -35,6 +35,8 @@ main {
     grid-template-columns: repeat(3, 1fr);
     column-gap: 10px;
     row-gap: 15px;
+    grid-auto-rows: min-content;
+    align-items: start;
 }
 
 .last-comment .movies-container .card-movie {
@@ -42,10 +44,13 @@ main {
     padding: 0;
     color: #000;
     text-decoration: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .last-comment .movies-container .card-movie figure {
     position: relative;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .last-comment .movies-container .card-movie figure > p {
@@ -69,8 +74,8 @@ main {
 
 .last-comment .movies-container .card-movie figure img {
     width: 100%;
-    height: 300px;
-    max-height: 300px;
+    height: 400px;
+    max-height: 400px;
     transition: all 0.2s;
 }
 

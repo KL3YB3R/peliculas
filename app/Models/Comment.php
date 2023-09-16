@@ -14,6 +14,6 @@ class Comment extends Model
         'id_user',
         'username',
         'comment',
-        'points'
+        'comment_points'
     ];
 }

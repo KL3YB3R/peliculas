@@ -69,7 +69,7 @@
                     <textarea name="comment" id="comment" rows="5" class="modal-comment"></textarea>
                     <aside class="d-flex flex-column">
                         <label for="points">Califica esta película (max. 5)</label>
-                        <input type="text" id="points" name="points" placeholder="2.5, 2 o 1.1">
+                        <input type="text" id="comment_points" name="comment_points" placeholder="2.5, 2 o 1.1">
                     </aside>
                 </div>
                 <div class="modal-footer">

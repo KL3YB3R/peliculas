@@ -12,7 +12,7 @@ class SaveCommentController extends Controller
     public function store(SaveCommentRequest $request, $id)
     {
         // ! CREAR NUEVO COMENTARIO
-        // $user = Comment::create($request->getCommentDetails($id));
+        $user = Comment::create($request->getCommentDetails($id));
 
         // ! ACTUALIZAR VALORACION DE LA PELICULA
         $movie = Movie::find($id);

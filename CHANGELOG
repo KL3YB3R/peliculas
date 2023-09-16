@@ -1,0 +1,10 @@
+V 0.1 ->
+ - Login y Registro de la Página.
+ - Registrar una Pelicula.
+ - Visualizar la información de la película.
+ - Agregar un comentario a la pelicula.
+
+V 0.1.1 ->
+
+ - Visualizar en el home el ultimo comentario de la pelicula, además de la puntuacion de la misma.
+ - Mejoras al mostrar los comentarios de la película.
