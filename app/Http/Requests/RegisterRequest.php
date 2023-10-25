@@ -28,4 +28,15 @@ class RegisterRequest extends FormRequest
             'password_confirmation' => 'required|same:password',
         ];
     }
+
+    public function getUserImage()
+    {
+        return [
+            'email' => $this->get('email'),
+            'username' => $this->get('username'),
+            'password' => $this->get('password'),
+            'password_confirmation' => $this->get('password_confirmation'),
+            'image' => '/assets/img/usuario.png',
+        ];
+    }
 }

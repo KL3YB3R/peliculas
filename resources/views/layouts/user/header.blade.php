@@ -9,7 +9,10 @@
         <div class="d-flex w-50 justify-content-between align-items-center pe-5 header-list">
             <ul class="col-8 d-flex justify-content-center align-items-center mb-0">
                 <li class="item-links">
-                    <a href="/home">Home</a>
+                    <a href="/home">Inicio</a>
+                </li>
+                <li class="item-links">
+                    <a href="/movies">Peliculas</a>
                 </li>
                 @auth()
                     <li class="item-links">
@@ -18,9 +21,9 @@
                 @endauth
             </ul>
             <ul class="col-4 d-flex justify-content-between align-items-center mb-0">
-                @auth()
-                    <li>
-                        {{-- ! ACA VA UN ICONO DE NOTIFICACION --}}
+                @if ($user)
+                <li>
+                    {{-- ! ACA VA UN ICONO DE NOTIFICACION --}}
                         <a href="#"></a>
                     </li>
                     <li class="li-option d-flex flex-column">
@@ -37,10 +40,10 @@
                             </li>
                         </ul>
                     </li>
-                @endauth
-                {{-- @endguest
-                    <li><button>Sign in</button></li>
-                    <li><button>Sign up</button></li> --}}
+                @else
+                    <li class="d-flex text-center"><a href="/login" class="btn-signin">Sign in</a></li>
+                    <li class="d-flex text-center"><a href="/register" class="btn-signup">Sign up</a></li>
+                @endif
             </ul>
         </div>
     </nav>

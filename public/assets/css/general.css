@@ -12,8 +12,9 @@
 }
 
 header {
-    background-color: #f7efe2;
-    box-shadow: -4px 0px 2px 0px rgba(0, 0, 0, 0.5);
+    /* background-color: #f7efe2; */
+    background-color: #fff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     height: 60px;
 }
 
@@ -111,3 +112,36 @@ header li.li-option > ul > li > a {
     width: 100%;
     padding: 0.2rem 0.5rem;
 }
+
+header li .btn-signin,
+header li .btn-signup {
+    border-radius: 10px;
+    padding: 0.3rem 0.5rem;
+    transition: all 0.3s;
+    font-weight: 600;
+    width: 6rem;
+}
+
+header li .btn-signin {
+    border: 3px solid #0091ff;
+}
+
+header li .btn-signin:hover {
+    box-shadow: inset 6rem 0 0 0 #0091ff;
+    /* background-color: ; */
+    color: #fff;
+}
+
+header li .btn-signup {
+    border: 3px solid #0091ff;
+    box-shadow: inset 6rem 0 0 0 #0091ff;
+    color: #fff;
+}
+
+header li .btn-signup:hover {
+    border: 3px solid #0091ff;
+    box-shadow: inset 6rem 0 0 0 #fff;
+    color: #000;
+}
+
+/* ! ESTILOS DE MENSAJES DE ERROR */

@@ -11,9 +11,7 @@ class LoginController extends Controller
     // ! MOSTRAR VISTA LOGIN
     public function show()
     {
-        if (Auth::check()) {
-            return redirect('/home');
-        }
+        if (Auth::check()) return redirect('/home');
         return view('auth.login');
     }
 
@@ -22,9 +20,9 @@ class LoginController extends Controller
     {
         $credentials = $request->getCredentials();
 
-        if (!Auth::validate($credentials)) {
-            return redirect()->to('/login')->withErrors('auth.failed');
-        }
+        if (!Auth::validate($credentials))
+            return redirect()->to('/login')->withErrors('Usuario o Contraseña incorrectos');
+
         $user = Auth::getProvider()->retrieveByCredentials($credentials);
 
         Auth::login($user);

@@ -1,9 +1,8 @@
 @extends('layouts.home')
+{{-- * LINK CSS --}}
+@section('link-css', '/assets/css/user/movie-details.css')
 
-<head>
-    <link rel="stylesheet" href="/assets/css/user/movie-details.css">
-</head>
-
+{{-- * CONTENIDO DE LA PAGINA --}}
 @section('content')
 
     <section class="movie-container">
@@ -27,7 +26,9 @@
 
                 <h6 class="mt-5 d-flex justify-content-between align-content-center">
                     Comentarios
-                    <a href="#" class="button-comment" data-toggle="modal" data-target="#modal-comment">Comentar</a>
+                    @if ($user)
+                        <a href="#" class="button-comment" data-toggle="modal" data-target="#modal-comment">Comentar</a>
+                    @endif
                 </h6>
                 <div class="contenedor-comentarios">
                     @foreach ($comments as $comment)
@@ -79,5 +80,7 @@
             </form>
         </div>
     </div>
+
+
 
 @endsection

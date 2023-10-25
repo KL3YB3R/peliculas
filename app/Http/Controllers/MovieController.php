@@ -6,13 +6,14 @@ use App\Models\Comment;
 use App\Models\Movie;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\AllMovies;
 
 class MovieController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function getMovies()
     {
         $movies = Movie::all();
         $film = null;
@@ -48,7 +49,21 @@ class MovieController extends Controller
             );
         }
 
+        return $film;
+    }
+
+    public function index()
+    {
+        // * LLAMAR PELICULAS
+        $film = $this->getMovies();
         return view('home.index', ['movies' => $film]);
+    }
+
+    public function showMovies()
+    {
+        // * LLAMAR PELICULAS
+        $film = $this->getMovies();
+        return view('home.movies', ['movies' => $film]);
     }
 
     /**

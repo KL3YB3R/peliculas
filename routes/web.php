@@ -22,43 +22,50 @@ use App\Http\Controllers\SaveCommentController;
 |
 */
 
-// TODO VISTA HOME
-Route::get('/', [HomeController::class, 'show']);
+// * MOSTRAR LA VISTA DE INICIO CON Y SIN LOGUEAR
+Route::controller(HomeController::class)->group(function () {
+    // TODO VISTA HOME
+    Route::get('/', 'show');
+    // TODO MOSTRAR VISTA HOME
+    Route::get('/home', 'show');
+});
 
-// TODO MOSTRAR LAS PELICULAS
-Route::get('/', [MovieController::class, 'index']);
+// * MOSTRAR LAS PELICULAS EN EL HOME
+Route::controller(MovieController::class)->group(function () {
+    Route::get('/', 'index');
+    Route::get('/home', 'index');
+    Route::get('/movies', 'showMovies');
+});
 
 // ! SIN LOGUEAR
-// TODO MOSTRAR LA VISTA REGISTER
-Route::get('/register', [RegisterController::class, 'show']);
+// * REGISTER CONTROLLER
+Route::controller(RegisterController::class)->group(function () {
+    // TODO MOSTRAR LA VISTA REGISTER
+    Route::get('/register', 'show');
+    // TODO ENVIAR EL REGISTRO
+    Route::post('/register', 'register');
+});
 
-// TODO ENVIAR EL REGISTRO
-Route::post('/register', [RegisterController::class, 'register']);
+// * lOGIN CONTROLLER
+Route::controller(LoginController::class)->group(function () {
+    // TODO MOSTRAR VISTA LOGIN
+    Route::get('/login', 'show');
+    // TODO VALIDAR DATOS
+    Route::post('/login', 'login');
+});
 
-// TODO MOSTRAR VISTA LOGIN
-Route::get('/login', [LoginController::class, 'show']);
-
-// TODO VALIDAR DATOS
-Route::post('/login', [LoginController::class, 'login']);
-
-// TODO MOSTRAR VISTA HOME
-Route::get('/home', [HomeController::class, 'show']);
-
-Route::get('/home', [MovieController::class, 'index']);
-
-// TODO VER DETALLES DE LA PELICULA
+// * VER DETALLES DE LA PELICULA
 Route::get('/movies/{id}', [MovieDetailsController::class, 'show']);
 
-// TODO GUARDAR UN COMENTARIO
+// * GUARDAR UN COMENTARIO
 Route::post('/movies/comment/{id}', [SaveCommentController::class, 'store']);
-
 
 // ! USERS
 
-// TODO LOGOUT
+// * LOGOUT
 Route::get('/logout', [LogoutController::class, 'logout']);
 
-// ? ADMIN
+// ! ADMIN
 Route::get('/movies/register', [RegisterMoviesController::class, 'show']);
 
 Route::post('/movies/register', [RegisterMoviesController::class, 'store']);

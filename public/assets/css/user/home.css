@@ -104,8 +104,8 @@ main {
 
 .best-pointer .card-movie > figure > img {
     width: 100%;
-    height: 90px;
-    max-height: 90px;
+    height: 120px;
+    max-height: 120px;
 }
 
 .best-pointer .card-movie > div {

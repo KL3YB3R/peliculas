@@ -6,6 +6,7 @@ use App\Models\Comment;
 use App\Models\Movie;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class MovieDetailsController extends Controller
@@ -22,6 +23,6 @@ class MovieDetailsController extends Controller
             ->join('users', 'users.id', '=', 'comments.id_user')->get();
         // $users = User::all()->where('id', $comments->id_user);
 
-        return view('home.movie', ['movie' => $movie, 'comments' => $comments]);
+        return view('home.movieDetails', ['movie' => $movie, 'comments' => $comments, 'user' => Auth::user()]);
     }
 }

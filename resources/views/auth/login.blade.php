@@ -18,6 +18,7 @@
         <label for="password" class="mb-1">Password</label>
         <input type="password" name="password" id="password" class="form-group mb-4" placeholder="Type your password">
 
+        @include('layouts.messages')
         {{-- TODO OPTIONS CONTAINER --}}
         <div class="d-flex justify-content-between align-items-end">
             <aside class="col-6 d-flex flex-column">
@@ -26,5 +27,6 @@
             </aside>
             <button type="submit" class="col-3 login">Sign in</button>
         </div>
+
     </form>
 @endsection
