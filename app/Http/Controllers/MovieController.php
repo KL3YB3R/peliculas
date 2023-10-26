@@ -33,23 +33,39 @@ class MovieController extends Controller
             );
 
             foreach ($comments as $comm) {
+                // * CORTAR EL TEXTO GUARDADO PARA MOSTRARLO
+
                 $comment = array(
                     'usernameComment' => $comm->username,
-                    'comment' => $comm->comment
+                    'comment' => $comm->comment,
                 );
             }
+
+
+            // * CORTAR EL TEXTO GUARDADO PARA MOSTRARLO
+            $cutDescription = $this->cutText($movie->description, 0, 200);
+            $cutComment = $this->cutText($comment['comment'], 0, 60);
 
             $film[] = array(
                 'movieId' => $movie->id,
                 'movieName' => $movie->name,
                 'movieImage' => $movie->image,
+                'movieDescription' => $movie->description,
+                'movieCutDescription' => $cutDescription,
                 'moviePoints' => $movie->movie_points,
                 'usernameComment' => $comment['usernameComment'],
                 'comment' => $comment['comment'],
+                'cutComment' => $cutComment
             );
         }
 
         return $film;
+    }
+
+    public function cutText($text, $minChar, $maxChar)
+    {
+        if (strlen($text) > $maxChar) return substr($text, $minChar, $maxChar) . "...";
+        else return substr($text, $minChar, $maxChar);
     }
 
     public function index()

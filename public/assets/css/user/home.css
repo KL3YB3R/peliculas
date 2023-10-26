@@ -39,58 +39,94 @@ main {
     align-items: start;
 }
 
-.last-comment .movies-container .card-movie {
+.movies-container .card-movie {
     background-color: #fff;
-    padding: 0;
-    color: #000;
-    text-decoration: none;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    height: 500px;
+    max-height: 500px;
+    border-radius: 10px;
 }
 
-.last-comment .movies-container .card-movie figure {
+.movies-container .card-movie > .movie-details {
+    height: calc(500px - 20%);
+    max-height: calc(500px - 20%);
     position: relative;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    color: #000;
 }
 
-.last-comment .movies-container .card-movie figure > p {
+.movies-container .card-movie > .movie-details:hover .content-movie {
+    opacity: 1;
+}
+
+.movies-container .card-movie > .movie-details > img {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.movies-container .card-movie > .movie-details > .content-movie {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
     position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
+    top: 0;
+    height: 100%;
+    padding: 1rem 1rem;
+    opacity: 0;
+    transition: all 0.2s;
+}
+
+.movies-container .card-movie > .movie-details > .content-movie > p {
+    color: #fff;
+    font-size: 18px;
+}
+
+.movies-container
+    .card-movie
+    > .movie-details
+    > .content-movie
+    > p:first-child {
+    font-weight: 800;
+}
+
+.movies-container .card-movie > .movie-details > p.points-container {
+    position: absolute;
+    right: 0.8rem;
+    bottom: 0;
+    padding: 0.3rem 1rem;
+    border-radius: 30px;
+    font-size: 17px;
+    font-weight: 600;
+    background-color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fff;
-    border-radius: 30px;
-    padding: 0.2rem 0.7rem;
 }
 
-.last-comment .movies-container .card-movie figure > p > span.icon-star {
+.movies-container .card-movie > .movie-details > p.points-container > span {
     content: url("/assets/icons/estrella.png");
     width: 20px;
     height: 20px;
     margin-right: 0.5rem;
 }
 
-.last-comment .movies-container .card-movie figure img {
-    width: 100%;
-    height: 400px;
-    max-height: 400px;
-    transition: all 0.2s;
-}
-
+/*
 .last-comment .movies-container .card-movie > div h6 {
     font-weight: 600;
 }
+*/
 
-.last-comment .movies-container .card-movie > div p.title-comment {
-    font-size: 15px;
+.movies-container .card-movie > aside {
+    padding: 0.5rem 1rem;
+}
+
+.movies-container .card-movie > aside p.title-comment {
+    font-size: 16px;
     margin-bottom: 0.2rem;
     font-weight: 600;
 }
 
-.last-comment .movies-container .card-movie > div p.comment {
-    font-size: 13px;
+.movies-container .card-movie > aside p.comment {
+    font-size: 15px;
     margin-bottom: 0.2rem;
 }
 

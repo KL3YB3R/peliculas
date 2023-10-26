@@ -5,6 +5,86 @@
     background: transparent;
 }
 
+/* ! SECTION MOVIES */
 .movies-container {
+    margin: auto;
+    margin-top: 3rem;
+    width: 90%;
+}
+
+.movies-container > h2 {
+    border-bottom: 2px solid rgba(240, 92, 0, 0.2);
+    padding: 0 0 0.8rem 0.8rem;
+}
+
+/* ! MOVIES CONTAINER */
+.movies-flex {
+    padding: 2rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.movies-flex > a {
+    border-radius: 6px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    color: #000;
+}
+
+.movies-flex > a * {
+    pointer-events: none;
+}
+
+.movies-flex > a:hover .content-movie {
+    opacity: 1;
+}
+
+.movies-flex > a > img {
+    width: 100%;
+    height: 450px;
+    border-radius: 6px;
+}
+
+.movies-flex > a > .content-movie {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    padding: 1rem 1rem;
+    opacity: 0;
+    transition: all 0.2s;
+}
+
+.movies-flex > a > .content-movie > p {
+    color: #fff;
+    font-size: 20px;
+}
+
+.movies-flex > a > .content-movie > p:first-child {
+    font-weight: 800;
+}
+
+.movies-flex > a > p.points-container {
+    position: absolute;
+    right: 0.8rem;
+    bottom: 0;
+    padding: 0.3rem 1rem;
+    border-radius: 30px;
+    font-size: 17px;
+    font-weight: 600;
     background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.movies-flex > a > p.points-container > span {
+    content: url("/assets/icons/estrella.png");
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
 }
