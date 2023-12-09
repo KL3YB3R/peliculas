@@ -16,4 +16,9 @@ class Comment extends Model
         'comment',
         'comment_points'
     ];
+
+    public function movie()
+    {
+        return $this->belongsTo(Movie::class);
+    }
 }

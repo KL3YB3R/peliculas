@@ -41,14 +41,14 @@ main {
 
 .movies-container .card-movie {
     background-color: #fff;
-    height: 500px;
-    max-height: 500px;
+    height: 100%;
+    max-height: 450px;
     border-radius: 10px;
 }
 
 .movies-container .card-movie > .movie-details {
-    height: calc(500px - 20%);
-    max-height: calc(500px - 20%);
+    height: calc(420px - 15%);
+    max-height: calc(420px - 15%);
     position: relative;
     color: #000;
 }
@@ -66,7 +66,8 @@ main {
 
 .movies-container .card-movie > .movie-details > .content-movie {
     background-color: rgba(0, 0, 0, 0.8);
-    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     position: absolute;
     top: 0;
     height: 100%;
@@ -92,9 +93,9 @@ main {
     position: absolute;
     right: 0.8rem;
     bottom: 0;
-    padding: 0.3rem 1rem;
+    padding: 0.3rem 0.8rem;
     border-radius: 30px;
-    font-size: 17px;
+    font-size: 14px;
     font-weight: 600;
     background-color: #fff;
     display: flex;
@@ -104,29 +105,27 @@ main {
 
 .movies-container .card-movie > .movie-details > p.points-container > span {
     content: url("/assets/icons/estrella.png");
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     margin-right: 0.5rem;
 }
 
-/*
-.last-comment .movies-container .card-movie > div h6 {
-    font-weight: 600;
+.last-comment > h4 {
+    width: 98%;
 }
-*/
 
 .movies-container .card-movie > aside {
     padding: 0.5rem 1rem;
 }
 
 .movies-container .card-movie > aside p.title-comment {
-    font-size: 16px;
+    font-size: 15px;
     margin-bottom: 0.2rem;
     font-weight: 600;
 }
 
 .movies-container .card-movie > aside p.comment {
-    font-size: 15px;
+    font-size: 13px;
     margin-bottom: 0.2rem;
 }
 
@@ -140,8 +139,8 @@ main {
 
 .best-pointer .card-movie > figure > img {
     width: 100%;
-    height: 120px;
-    max-height: 120px;
+    height: 100px;
+    max-height: 100px;
 }
 
 .best-pointer .card-movie > div {

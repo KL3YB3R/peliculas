@@ -13,10 +13,13 @@ class MovieController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function getMovies()
+    // ! FUNCION PARA MOSTRAR LAS ULTIMAS PELICULAS COMENTADAS
+    public function getLastestCommentedMovies()
     {
         $movies = Movie::all();
         $film = null;
+
+        dd($movies);
 
         foreach ($movies as $movie) {
             $comments = DB::table('comments')
@@ -41,21 +44,40 @@ class MovieController extends Controller
                 );
             }
 
-
             // * CORTAR EL TEXTO GUARDADO PARA MOSTRARLO
             $cutDescription = $this->cutText($movie->description, 0, 200);
             $cutComment = $this->cutText($comment['comment'], 0, 60);
 
+            if ($cutComment !== '') {
+                $film[] = array(
+                    'movieId' => $movie->id,
+                    'movieName' => $movie->name,
+                    'movieImage' => $movie->image,
+                    'movieDescription' => $movie->description,
+                    'movieCutDescription' => $cutDescription,
+                    'moviePoints' => $movie->movie_points,
+                    'usernameComment' => $comment['usernameComment'],
+                    'cutComment' => $cutComment
+                );
+            }
+        }
+
+        return $film;
+    }
+
+    // ! FUNCION PARA MOSTRAR LAS PELICULAS MAS PUNTUADAS
+    public function getBestMoviesPointed()
+    {
+        // * LLAMAR LAS PELICULAS MEJORES PUNTUADAS
+        $movies = Movie::where('movie_points', '!=', '0')->orderBy('movie_points', 'desc')->get();
+        $film = null;
+
+        foreach ($movies as $movie) {
             $film[] = array(
                 'movieId' => $movie->id,
                 'movieName' => $movie->name,
                 'movieImage' => $movie->image,
-                'movieDescription' => $movie->description,
-                'movieCutDescription' => $cutDescription,
                 'moviePoints' => $movie->movie_points,
-                'usernameComment' => $comment['usernameComment'],
-                'comment' => $comment['comment'],
-                'cutComment' => $cutComment
             );
         }
 
@@ -70,9 +92,15 @@ class MovieController extends Controller
 
     public function index()
     {
-        // * LLAMAR PELICULAS
-        $film = $this->getMovies();
-        return view('home.index', ['movies' => $film]);
+        // * ULTIMAS PELICULAS COMENTADAS
+        // ? ==> SOLO SE MOSTRARAN LAS PELICULAS CON COMENTARIOS INICIANDO CON LA ULTIMA COMENTADA
+        $lastestCommented = $this->getLastestCommentedMovies();
+
+        // * PELICULAS MEJORES PUNTUADAS
+        // ? ==> SOLO SE MOSTRARAN LAS QUE HAN SIDO PUNTUADAS
+        $bestDotted = $this->getBestMoviesPointed();
+
+        return view('home.index', ['latestComments' => $lastestCommented, 'bestDotted' => $bestDotted]);
     }
 
     public function showMovies()
@@ -80,52 +108,5 @@ class MovieController extends Controller
         // * LLAMAR PELICULAS
         $film = $this->getMovies();
         return view('home.movies', ['movies' => $film]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Movie $movie)
-    {
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Movie $movie)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Movie $movie)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Movie $movie)
-    {
-        //
     }
 }

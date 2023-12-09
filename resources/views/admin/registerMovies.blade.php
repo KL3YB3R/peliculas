@@ -1,7 +1,7 @@
 @extends('admin.layouts.admin')
 
 @section('form')
-    <form action="/movies/register" method="POST" enctype="multipart/form-data" class="d-flex row justify-content-start align-items-start">
+    <form action="/movie/register" method="POST" enctype="multipart/form-data" class="d-flex row justify-content-start align-items-start">
         @csrf
         <aside>
             <label for="name">Name Movie</label>

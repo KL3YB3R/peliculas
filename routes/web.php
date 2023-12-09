@@ -66,6 +66,6 @@ Route::post('/movies/comment/{id}', [SaveCommentController::class, 'store']);
 Route::get('/logout', [LogoutController::class, 'logout']);
 
 // ! ADMIN
-Route::get('/movies/register', [RegisterMoviesController::class, 'show']);
+Route::get('/movie/register', [RegisterMoviesController::class, 'show']);
 
-Route::post('/movies/register', [RegisterMoviesController::class, 'store']);
+Route::post('/movie/register', [RegisterMoviesController::class, 'store']);

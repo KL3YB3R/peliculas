@@ -21,6 +21,6 @@ class RegisterMoviesController extends Controller
         // ! REGISTRA LA PELICULA
         $movie = Movie::create($request->getDirectionImage());
 
-        return redirect('/movies/register')->with('success', 'Account created successfully');
+        return redirect('/movie/register')->with('success', 'Account created successfully');
     }
 }
