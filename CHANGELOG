@@ -14,3 +14,7 @@ V 0.1.2 ->
 
  - Ordenar el area de las peliculas mejores puntuadas.
  - Mejoras del diseño de presentación de las peliculas.
+
+V 0.1.2.1 ->
+ - Ordenar el area de las ultimas peliculas comentadas.
+ - Mejorar las relaciones de las tablas en la base de datos para mostrar mejor la información y simplificar el codigo.

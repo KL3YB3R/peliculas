@@ -5,6 +5,7 @@ namespace App\Http\Requests;
 use App\Models\Comment;
 use App\Models\Movie;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\DB;
 
@@ -58,8 +59,8 @@ class SaveCommentRequest extends FormRequest
             $count++;
             $totalPoints += $points->comment_points;
         }
-        $moviePoints = number_format($totalPoints / $count, 1);
-
+        if ($totalPoints !== 0) $moviePoints = number_format($totalPoints / $count, 1);
+        else $moviePoints = 0;
 
         return $moviePoints;
     }

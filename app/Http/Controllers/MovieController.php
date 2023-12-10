@@ -16,12 +16,10 @@ class MovieController extends Controller
     // ! FUNCION PARA MOSTRAR LAS ULTIMAS PELICULAS COMENTADAS
     public function getLastestCommentedMovies()
     {
-        $movies = Movie::all();
-        $film = null;
-
-        dd($movies);
+        $movies = Movie::where("movie_points", "!=", '0')->orderBy("movies.updated_at", "desc")->get();
 
         foreach ($movies as $movie) {
+
             $comments = DB::table('comments')
                 ->select("comments.*", 'users.username', 'users.name', 'users.image', 'users.email')
                 ->where('id_movie', $movie->id)
@@ -29,11 +27,6 @@ class MovieController extends Controller
                 ->orderBy('comments.created_at', 'desc')
                 ->limit(1)
                 ->get();
-
-            $comment = array(
-                'usernameComment' => null,
-                'comment' => null
-            );
 
             foreach ($comments as $comm) {
                 // * CORTAR EL TEXTO GUARDADO PARA MOSTRARLO
@@ -74,7 +67,7 @@ class MovieController extends Controller
 
         foreach ($movies as $movie) {
             $film[] = array(
-                'movieId' => $movie->id,
+                'movieId' => $movie->id_movie,
                 'movieName' => $movie->name,
                 'movieImage' => $movie->image,
                 'moviePoints' => $movie->movie_points,

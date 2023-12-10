@@ -14,6 +14,7 @@ class Movie extends Model
         'description',
         'date_published',
         'genders',
-        'image'
+        'image',
+        'lastest_comment'
     ];
 }
