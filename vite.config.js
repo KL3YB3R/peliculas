@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 import fs from 'fs'; 
-const host = '1000';
+const host = 'heroes.test';
 
 export default defineConfig({
     server: {
