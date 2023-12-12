@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
-
+import fs from 'fs'; 
 const host = '1000';
 
 export default defineConfig({
