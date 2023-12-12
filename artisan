@@ -49,5 +49,4 @@ $status = $kernel->handle(
 */
 
 $kernel->terminate($input, $status);
-expose 1000;
 exit($status);
