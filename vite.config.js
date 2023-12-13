@@ -8,6 +8,14 @@ export default defineConfig({
             host: "render",
         },
     },
+    build: {
+        // genera el archivo .vite/manifest.json en outDir
+        manifest: true,
+        rollupOptions: {
+            // sobreescribe la entrada por defecto .html
+            input: "/path/to/main.js",
+        },
+    },
     plugins: [
         laravel({
             input: ['resources/css/app.css', 'resources/js/app.js'],
