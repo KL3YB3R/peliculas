@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="/assets/css/user/home.css">
     <link rel="stylesheet" href="@yield('link-css')">
 
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
 </head>
 <body>
     @include('layouts.user.header')
