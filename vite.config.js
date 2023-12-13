@@ -5,7 +5,7 @@ export default defineConfig({
     base: '/',
     server: {
         hmr: {
-            host: "render",
+            host: "localhost",
         },
     },
     plugins: [
