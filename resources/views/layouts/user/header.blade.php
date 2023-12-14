@@ -20,16 +20,16 @@
                     </li>
                 @endauth
             </ul>
-            <div class="line"></div>
+            @if (!$user) <div class="line"></div> @endif
             <ul class="d-flex p-0 justify-content-between align-items-center mb-0">
                 @if ($user)
                 {{-- ! ACA VA UN ICONO DE NOTIFICACION --}}
-                    <li>
+                    <li class="ms-5">
                         <a href="#"></a>
                     </li>
                     <li class="li-option d-flex flex-column">
                         {{-- ! ACA VA UN ICONO DE CONFIGURACION --}}
-                        <a href="#" class="link-suboption">
+                        <a href="#" class="link-suboption profile-settings">
                             <img src="{{ $user->image }}" class="image-profile-header">
                         </a>
                         <ul class="setting-options">

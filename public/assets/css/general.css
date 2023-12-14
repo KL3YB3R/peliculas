@@ -88,31 +88,52 @@ header li.li-option > ul {
     display: none;
 }
 
-header li.li-option > .link-suboption:hover ~ ul,
-header li.li-option > ul:hover {
+/* header li.li-option > .link-suboption:hover ~ ul, */
+header li.li-option > ul.active {
     display: block;
-    width: 6rem;
+    /* width: 6rem; */
+    width: 150px;
     position: absolute;
-    left: -2rem;
-    padding: 0;
+    right: -0.5rem;
+    padding: 0.5rem;
     background-color: #fff;
-    bottom: -3.9rem;
-    text-align: center;
-    /* height: 60px; */
+    bottom: -5.5rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    z-index: 999;
 }
 
 header li.li-option > ul > li {
     width: 100%;
-    margin-right: 2rem !important;
-    /* padding: 1rem 1rem; */
-}
-
-header li.li-option > ul > li:first-child {
-    border-bottom: 1px solid #eee;
 }
 
 header li.li-option > ul > li > a {
     width: 100%;
+    padding: 0.3rem 0.5rem;
+    font-size: 15px;
+}
+
+header li.li-option > ul > li > a:hover {
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    color: #0e1a34;
+}
+
+.back-button {
+    margin-bottom: 3rem;
+    color: #fff;
+    text-decoration: none;
+    margin-left: 1rem;
+    position: relative;
+    background-color: #5076d1;
+    padding: 0.2rem 1rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #2b478a;
+    color: #fff;
 }
 
 /* ! ESTILOS DE MENSAJES DE ERROR */

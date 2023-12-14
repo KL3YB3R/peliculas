@@ -6,19 +6,20 @@
 @section('content')
 
     <section class="movie-container">
+        <a href="#" onclick="window.history.back();" class="back-button">Volver</a>
         {{-- ! HEADER DE LA PELICULA --}}
         <header class="d-flex justify-content-start align-items-end">
-            <img src="{{ $movie->image }}" alt="">
-            <h2>{{ $movie->name }}</h2>
+            <h1>{{ $movie->name }}</h1>
             {{-- <h5><span class="icon-star"></span>4.7 points</h5> --}}
         </header>
 
 
-        <div class="details-container d-flex justify-content-center align-items-baseline">
+        <div class="details-container d-flex justify-content-center align-items-start">
             <aside class="col-2">
+                <img src="{{ $movie->image }}" alt="">
+
                 <h6>Valoración</h6>
-                <p>{{ $movie->movie_points }} points</p>
-                {{-- {{ $points = 0 }} --}}
+                <p class="points-container d-flex align-items-center"><span class="icon-star"></span>{{ $movie->movie_points }} puntos</p>
             </aside>
             <aside class="col-8">
                 <h6>Descripción</h6>
@@ -49,6 +50,9 @@
 
             </aside>
             <aside class="col-2">
+                <h6>Se estrenó el:</h6>
+                <p class="mb-4">{{ $datePublished }}</p>
+
                 <h6>Géneros</h6>
                 <p>{{ $movie->genders }}</p>
             </aside>

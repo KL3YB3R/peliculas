@@ -63,7 +63,7 @@
     align-items: center;
 }
 
-.movies-container .card-movie > .movie-details > p.points-container > span {
+p.points-container > span {
     content: url("/assets/icons/estrella.png");
     width: 15px;
     height: 15px;
