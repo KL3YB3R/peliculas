@@ -23,12 +23,16 @@ use Illuminate\Support\Facades\Vite;
     <link rel="stylesheet" href="/assets/css/error-section.css">
     <link rel="stylesheet" href="@yield('link-css')">
 
+<<<<<<< HEAD
         <style>
         {!! Vite::content('resources/css/app.css') !!}
     </style>
     <script>
         {!! Vite::content('resources/js/app.js') !!}
     </script>
+=======
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+>>>>>>> aad4879ee3a108a48e3517df16d02edee0196868
 
 </head>
 <body>
