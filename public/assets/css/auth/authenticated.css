@@ -2,12 +2,15 @@
     --white: #fff;
 }
 
+/* header {
+    border-bottom: 1px solid #fff;
+} */
+
 /* ! AUTHENTICATION CONTAINER */
-.main-container {
+.main-home {
     width: 100%;
-    height: 100vh;
-    background: url("/assets/img/movies.jpg") no-repeat;
-    background-size: 100% 100%;
+    height: 90vh;
+    background-color: #0e1a34;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,7 +48,7 @@
 }
 
 .card-authenticated form a:hover {
-    color: #d09683;
+    color: #244386;
 }
 
 .card-authenticated form button {
@@ -57,18 +60,18 @@
 }
 
 .card-authenticated form button.login {
-    border: 2px solid #d09683;
+    border: 2px solid #244386;
     background-color: transparent;
     padding: 0.2rem 0;
 }
 
 .card-authenticated form button.login:hover {
-    box-shadow: inset 5.5rem 0 0 0 #d09683;
+    box-shadow: inset 5.5rem 0 0 0 #244386;
     color: var(--white);
 }
 
 .card-authenticated form button.register {
-    background-color: #d09683;
+    background-color: #244386;
     padding: 0.2rem 0;
     border: none;
     color: #fff;

@@ -4,19 +4,21 @@
 @section('link-css', '/assets/css/movies.css')
 
 @section('content')
+    <p id="page" class="d-none">películas</p>
+
     <section class="movies-container">
-        <h2>Explora y Comenta según tu criterio</h2>
-        <aside class="movies-flex">
-            @foreach ($movies as $movie)
-                <a href="{{ "movies/".$movie['movieId'] }}">
-                    <img src="{{ $movie['movieImage'] }}" alt="">
+        {{-- <h5></h5> --}}
+        @foreach ($allMovies as $movie)
+            <article class="card-movie d-flex flex-column justify-content-start">
+                <a href="{{ "movies/".$movie['id'] }}" class="movie-details">
+                    <img src="{{ $movie['image'] }}" alt="">
                     <div class="content-movie">
-                        <p class="title-movie">{{ $movie['movieName'] }}</p>
-                        <p class="description-movie">{{ $movie['movieCutDescription'] }}</p>
+                        <p class="title-movie">{{ $movie['name'] }}</p>
+                        <p class="description-movie">{{ $movie['description'] }}</p>
                     </div>
-                    <p class="points-container"><span class="icon-star"></span>{{ $movie['moviePoints'] }}</p>
+                    <p class="points-container"><span class="icon-star"></span>{{ $movie['points'] }}</p>
                 </a>
-            @endforeach
-        </aside>
+            </article>
+        @endforeach
     </section>
 @endsection

@@ -1,0 +1,25 @@
+/* ! CSS DEDICATED TO ERROR CONTAINER STYLES */
+
+.error-container {
+    background-color: #eee;
+    height: 70vh;
+}
+
+.error-container.best-dotted {
+    height: 40vh;
+}
+
+.error-container.lastest-comments {
+    height: 60vh;
+}
+
+.error-container > .error-text {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto auto;
+    height: min-content;
+    width: max-content;
+}

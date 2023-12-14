@@ -13,7 +13,7 @@
 
 header {
     /* background-color: #f7efe2; */
-    background-color: #fff;
+    background-color: #0e1a34;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     height: 60px;
 }
@@ -27,30 +27,32 @@ header ul > li > a {
     color: #000;
 }
 
-header .item-links {
+header .line {
+    height: 1.5rem;
+    background-color: #ddd;
+    padding: 0.02rem;
 }
 
-header .item-links > a {
+header .item-links > a,
+header li .btn-signin,
+header li .btn-signup {
     padding: 1rem 1rem;
     transition: all 0.3s;
     border-bottom: 2px solid transparent;
+    color: #fff;
 }
 
-header .item-links > a:hover {
+header .item-links > a:hover,
+header li .btn-signin:hover,
+header li .btn-signup:hover {
     cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.1);
-    border-bottom: 2px solid var(--second-color);
-    color: #000;
+    background-color: #19284a;
+    border-bottom: 2px solid #fff;
 }
 
 header .item-links > a.active {
     background-color: rgba(0, 0, 0, 0.1);
-    border-bottom: 2px solid var(--first-color);
-}
-
-header .item-links > a.active {
-    background-color: rgba(0, 0, 0, 0.1);
-    border-bottom: 2px solid var(--first-color);
+    border-bottom: 2px solid #fff;
 }
 
 header li.li-option {
@@ -101,6 +103,7 @@ header li.li-option > ul:hover {
 
 header li.li-option > ul > li {
     width: 100%;
+    margin-right: 2rem !important;
     /* padding: 1rem 1rem; */
 }
 
@@ -110,38 +113,6 @@ header li.li-option > ul > li:first-child {
 
 header li.li-option > ul > li > a {
     width: 100%;
-    padding: 0.2rem 0.5rem;
-}
-
-header li .btn-signin,
-header li .btn-signup {
-    border-radius: 10px;
-    padding: 0.3rem 0.5rem;
-    transition: all 0.3s;
-    font-weight: 600;
-    width: 6rem;
-}
-
-header li .btn-signin {
-    border: 3px solid #0091ff;
-}
-
-header li .btn-signin:hover {
-    box-shadow: inset 6rem 0 0 0 #0091ff;
-    /* background-color: ; */
-    color: #fff;
-}
-
-header li .btn-signup {
-    border: 3px solid #0091ff;
-    box-shadow: inset 6rem 0 0 0 #0091ff;
-    color: #fff;
-}
-
-header li .btn-signup:hover {
-    border: 3px solid #0091ff;
-    box-shadow: inset 6rem 0 0 0 #fff;
-    color: #000;
 }
 
 /* ! ESTILOS DE MENSAJES DE ERROR */

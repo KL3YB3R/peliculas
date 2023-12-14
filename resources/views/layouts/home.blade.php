@@ -1,3 +1,6 @@
+@php
+use Illuminate\Support\Facades\Vite;
+@endphp
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
+
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     {{-- ! LINK BOOTSTRAP --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -14,7 +19,16 @@
 
     {{-- ! SPECIFIC LINKS --}}
     <link rel="stylesheet" href="/assets/css/user/home.css">
+    <link rel="stylesheet" href="/assets/css/movies-cards.css">
+    <link rel="stylesheet" href="/assets/css/error-section.css">
     <link rel="stylesheet" href="@yield('link-css')">
+
+        <style>
+        {!! Vite::content('resources/css/app.css') !!}
+    </style>
+    <script>
+        {!! Vite::content('resources/js/app.js') !!}
+    </script>
 
 </head>
 <body>
@@ -23,6 +37,8 @@
         @yield('content')
     </main>
     {{-- @yield('footer') --}}
+
+    <script script type="module" src="http://localhost:5173/main.js"></script>
 
     {{-- ! SCRIPT BOOTSTRAP Y BUNDLE --}}
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

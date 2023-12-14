@@ -1,20 +1,26 @@
 V 0.1 ->
- - Login y Registro de la Página.
- - Registrar una Pelicula.
- - Visualizar la información de la película.
- - Agregar un comentario a la pelicula.
+
+-   Login y Registro de la Página.
+-   Registrar una Pelicula.
+-   Visualizar la información de la película.
+-   Agregar un comentario a la pelicula.
 
 V 0.1.1 ->
 
- - Visualizar en el home el ultimo comentario de la pelicula, además de la puntuacion de la misma.
- - Mejoras al mostrar los comentarios de la película.
-
+-   Visualizar en el home el ultimo comentario de la pelicula, además de la puntuacion de la misma.
+-   Mejoras al mostrar los comentarios de la película.
 
 V 0.1.2 ->
 
- - Ordenar el area de las peliculas mejores puntuadas.
- - Mejoras del diseño de presentación de las peliculas.
+-   Ordenar el area de las peliculas mejores puntuadas.
+-   Mejoras del diseño de presentación de las peliculas.
 
 V 0.1.2.1 ->
- - Ordenar el area de las ultimas peliculas comentadas.
- - Mejorar las relaciones de las tablas en la base de datos para mostrar mejor la información y simplificar el codigo.
+
+-   Ordenar el area de las ultimas peliculas comentadas.
+-   Mejorar las relaciones de las tablas en la base de datos para mostrar mejor la información y simplificar el codigo.
+
+V 0.1.3 ->
+
+-   Nueva pantalla para mostrar todas las peliculas en orden de publicacion.
+-   Aplicar Nuevo tema para la vista del Proyecto.

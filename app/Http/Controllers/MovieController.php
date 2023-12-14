@@ -17,7 +17,7 @@ class MovieController extends Controller
     public function getLastestCommentedMovies()
     {
         $movies = Movie::where("movie_points", "!=", '0')->orderBy("movies.updated_at", "desc")->get();
-
+        $film = null;
         foreach ($movies as $movie) {
 
             $comments = DB::table('comments')
@@ -98,8 +98,22 @@ class MovieController extends Controller
 
     public function showMovies()
     {
-        // * LLAMAR PELICULAS
-        $film = $this->getMovies();
-        return view('home.movies', ['movies' => $film]);
+        // * CALL ALL MOVIES
+        $movies = Movie::select('*')->orderBy('id', 'desc')->get();
+        $allMovies = null;
+
+        foreach ($movies as $movie) {
+            $cutDescription = $this->cutText($movie->description, 0, 200);
+
+            $allMovies[] = array(
+                'id' => $movie->id,
+                'name' => $movie->name,
+                'description' => $cutDescription,
+                'image' => $movie->image,
+                'points' => $movie->movie_points,
+            );
+        }
+
+        return view('home.movies', compact('allMovies'));
     }
 }
