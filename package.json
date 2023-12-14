@@ -3,13 +3,8 @@
     "type": "module",
     "scripts": {
         "dev": "vite --host",
-<<<<<<< HEAD
         "build": "vite build"
     },
-=======
-        "build": "vite build",
-      },
->>>>>>> aad4879ee3a108a48e3517df16d02edee0196868
     "devDependencies": {
         "axios": "^1.1.2",
         "laravel-vite-plugin": "^0.8.0",
